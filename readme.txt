@@ -12,11 +12,17 @@
 - */2 A readme and demo video which explains how these features were implemented and their design rationale
 
 2. How long, in hours, did it take you to complete this assignment?
-
+6
 
 
 3. What online resources did you consult when completing this assignment? (list specific URLs)
-
+https://ionicframework.com/docs/api/tabs
+https://ionicframework.com/docs/api/
+https://ionic.io/ionicons
+https://www.youtube.com/watch?v=r2ga-iXS5i4&t=11367s
+https://www.youtube.com/watch?v=iq_XIPml9_M&t=658s
+https://date-fns.org/docs/Getting-Started
+course powerpoints 
 
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
@@ -24,7 +30,7 @@
 
 
 5. Is there anything special we need to know in order to run your code?
-
+i used the node module date-fns: https://date-fns.org/
 
 
 --Aim for no more than two sentences for each of the following questions.--

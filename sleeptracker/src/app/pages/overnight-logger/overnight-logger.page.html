@@ -10,4 +10,11 @@
       <ion-title size="large">overnight-logger</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-datetime #datetime presentation="date-time" [preferWheel]="true" (ionCancel) ='clear("start")' (ionChange)="changeStartDate(datetime.value)" [showDefaultButtons]="true" [value]="startDate"></ion-datetime>
+    </ion-item>
+      <ion-datetime #datetime presentation="date-time" [value]="endDate" (ionCancel) ='clear("end")' (ionChange)="changeEndDate(datetime.value)" [preferWheel]="true" [showDefaultButtons]="true"></ion-datetime>
+  </ion-list>
 </ion-content>
