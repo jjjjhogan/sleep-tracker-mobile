@@ -12,7 +12,6 @@ export class DaytimeLoggerPage implements OnInit {
 
   constructor(private sleepService:SleepService) {
     this.options = StanfordSleepinessData.ScaleValues;
-    console.log(this.options);
    }
 
   ngOnInit() {

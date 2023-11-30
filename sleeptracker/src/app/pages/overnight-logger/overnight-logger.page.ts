@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { formatISO, differenceInSeconds, intervalToDuration} from 'date-fns';
 import { OvernightSleepData } from 'src/app/data/overnight-sleep-data';
 import { SleepService } from 'src/app/services/sleep.service';
+import { AlertController } from '@ionic/angular';
+import { SQLite } from '@ionic-enterprise/secure-storage/ngx';
 
 
 @Component({
@@ -15,7 +17,7 @@ export class OvernightLoggerPage implements OnInit {
   startDate:string;
   secondsSlept: number = 0;
 
-  constructor(private sleepService:SleepService) { 
+  constructor(private sleepService:SleepService, private alertController: AlertController) { 
     this.today = formatISO(new Date());
     this.endDate = this.today;
     this.startDate = this.today;
@@ -48,14 +50,17 @@ export class OvernightLoggerPage implements OnInit {
       let date2 = new Date(this.endDate);
 
       this.secondsSlept = differenceInSeconds(date1,date2);
-      let timeSlept = intervalToDuration({start: 0, end: this.secondsSlept * 1000});
-      console.log(timeSlept);
+  
 
-
+    }
+    else{
+    
+     this.presentAlert("Sleep must be atleast one minute!");
     }
   }
 
   timeSlept(){
+
     let durationSlept = intervalToDuration({start: 0, end: this.secondsSlept * 1000});
     let outputStr = '' + durationSlept['hours'];
 
@@ -79,6 +84,30 @@ export class OvernightLoggerPage implements OnInit {
   }
 
   submitHoursSlept(){
-    this.sleepService.logOvernightData(new OvernightSleepData(new Date(this.startDate), new Date(this.endDate)))
+    let overnightData =new OvernightSleepData(new Date(this.startDate), new Date(this.endDate));
+    let durationSlept = intervalToDuration({start: 0, end: this.secondsSlept * 1000});
+    
+    if(overnightData['sleepStart'] > overnightData['sleepEnd']) {
+      this.presentAlert('Time you went to sleep must be before time you woke up');
+      return;
+    }
+    else if (durationSlept['days']!>0){
+      this.presentAlert("It seems you inputted too long of sleep, sleep must be under one day");
+      return;
+    }
+
+    
+    this.sleepService.logOvernightData(overnightData);
+  }
+
+  async presentAlert(mes:string) {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      subHeader: 'Incorrect sleep data',
+      message: mes,
+      buttons: ['Done'],
+    });
+
+    await alert.present();
   }
 }

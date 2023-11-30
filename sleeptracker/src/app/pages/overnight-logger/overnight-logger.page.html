@@ -11,15 +11,26 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
+  <ion-list lines="none">
+    <ion-item>
+      <ion-text color="primary">
+        <h2>Select time when you went to sleep</h2>
+      </ion-text>
+    </ion-item>
     <ion-item>
       <ion-datetime #datetime1 presentation="date-time" [preferWheel]="true" (ionCancel) ='clear("start")' (ionChange)="changeStartDate(datetime1.value)" [showDefaultButtons]="true" [value]="startDate"></ion-datetime>
     </ion-item>
     <ion-item>
+      <ion-text color="primary">
+        <h2>Select time when you woke up</h2>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>
       <ion-datetime #datetime2 presentation="date-time" (ionCancel) ='clear("end")' (ionChange)="changeEndDate(datetime2.value)" [preferWheel]="true" [showDefaultButtons]="true" [value]="endDate" ></ion-datetime>
     </ion-item>
 
-    <ion-item >
+    <ion-item>
       <ion-label class="ion-text-center">
         <ion-button (click)="updateHoursSlept()" size='normal' shape="Round">Calculate Slept Hours</ion-button>
       </ion-label>
@@ -27,7 +38,7 @@
 
     <ion-item text-center>
       <ion-label class="ion-text-center">
-        <ion-button (click)="submitHoursSlept()" size='normal' shape="Round">Submit sleep of {{timeSlept()}}</ion-button>
+        <ion-button (click)="submitHoursSlept()" size='normal' shape="Round">Log sleep of {{timeSlept()}}</ion-button>
       </ion-label>
     </ion-item>
   </ion-list>

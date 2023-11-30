@@ -1,7 +1,16 @@
 {
   "name": "sleeptracker",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "enterprise": {
+      "keyId": 16593,
+      "productKey": "key_f369584cc93a484c846d7d138957d1af",
+      "appId": "faa0d3ac",
+      "orgId": "7cdedaad-e1b5-4888-8e1b-fd7d65c342de",
+      "registries": [
+        "@ionic-enterprise;https://registry.ionicframework.com/"
+      ]
+    }
   },
   "type": "angular"
 }

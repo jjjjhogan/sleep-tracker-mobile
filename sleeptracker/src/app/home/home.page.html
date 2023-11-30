@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Sleep Tracker 
+    <ion-icon name="information-circle-outline"></ion-icon> Sleep Tracker Help
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,10 +9,53 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Sleep Tracker</ion-title>
+      <ion-title size="normal"><ion-icon name="information-circle-outline"></ion-icon> Sleep Tracker Help</ion-title>
     </ion-toolbar>
   </ion-header>
+  
+  <ion-card color="primary">
+    <ion-card-header>
+      <ion-card-title>How to log overnight sleep</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content> 
+      Overnight sleep can be logged for any day <br> <br>
+      Input your dates into the scroll menus and click done when you are finished <br> <br>
+      Once both times have been chosen click the Calculate Sleep Hours button to see how many hours were slept <br> <br>
+      If you would like to log the number click on the submit sleep hours button! <br> <br>
 
+      <ion-button expand="block" fill="outline" color="dark" href="/overnight-logger">Go to page!</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="primary">
+    <ion-card-header>
+      <ion-card-title>How to log sleepiness during the day!</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content> 
+      There are 7 options of sleepiness based on the stanford sleepiness scale<br> <br>
+      To select the option that you would like to log simply push the gray box to the right of the one that alligns with your current sleepiness <br> <br>
+      Click submit to log this data for your current time <br> <br>
+      Sleepiness can be logged many times throughout the day as needed <br> <br>
+
+      <ion-button expand="block" fill="outline" color="dark" href="/daytime-logger">Go to page!</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="primary">
+    <ion-card-header>
+      <ion-card-title>How to view logged data</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+    Logged data is displayed in the data page <br> <br>
+    The data will display whether it was overnight logged data or sleepiness data <br> <br>
+    Data that you inputted incorrectly or no longer need can be deleted by sliding the data to the left and clicking delete <br> <br>
+
+    <ion-button expand="block" fill="outline" color="dark" href="/data">Go to page!</ion-button>
+    </ion-card-content>
+  </ion-card>
 
 
 </ion-content>
