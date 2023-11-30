@@ -34,4 +34,9 @@ export class SleepService {
 		SleepService.AllSleepData.push(sleepData);
 		SleepService.AllSleepinessData.push(sleepData);
 	}
+
+	public getAllData(){
+		return SleepService.AllSleepData;
+	}
+
 }
