@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SleepService } from '../services/sleep.service';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { SleepService } from '../services/sleep.service';
 })
 export class HomePage {
 	
-  constructor(public sleepService:SleepService) {
+  constructor(public storage: Storage, public sleepService:SleepService) {
 	}
 
 	ngOnInit() {

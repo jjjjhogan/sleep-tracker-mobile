@@ -22,6 +22,7 @@ https://ionic.io/ionicons
 https://www.youtube.com/watch?v=r2ga-iXS5i4&t=11367s
 https://www.youtube.com/watch?v=iq_XIPml9_M&t=658s
 https://date-fns.org/docs/Getting-Started
+https://ionic.io/docs/secure-storage/install
 course powerpoints 
 
 

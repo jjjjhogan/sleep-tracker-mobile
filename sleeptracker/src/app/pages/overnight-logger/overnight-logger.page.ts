@@ -3,7 +3,7 @@ import { formatISO, differenceInSeconds, intervalToDuration} from 'date-fns';
 import { OvernightSleepData } from 'src/app/data/overnight-sleep-data';
 import { SleepService } from 'src/app/services/sleep.service';
 import { AlertController } from '@ionic/angular';
-import { SQLite } from '@ionic-enterprise/secure-storage/ngx';
+import { Storage } from '@ionic/storage-angular';
 
 
 @Component({
@@ -17,7 +17,8 @@ export class OvernightLoggerPage implements OnInit {
   startDate:string;
   secondsSlept: number = 0;
 
-  constructor(private sleepService:SleepService, private alertController: AlertController) { 
+  constructor(private storage: Storage, private sleepService:SleepService, private alertController: AlertController) { 
+
     this.today = formatISO(new Date());
     this.endDate = this.today;
     this.startDate = this.today;
