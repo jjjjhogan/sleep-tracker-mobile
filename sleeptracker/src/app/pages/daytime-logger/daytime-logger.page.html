@@ -1,13 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title><ion-icon name=""></ion-icon>Log your sleepiness!</ion-title>
+    <ion-title><ion-icon name="partly-sunny-outline"></ion-icon>Log your sleepiness!</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">daytime-logger</ion-title>
+      <ion-title size="normal"><ion-icon name="partly-sunny-outline"></ion-icon> Log your sleepiness!</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list lines="none" *ngIf="options">
+    <ion-item-sliding *ngFor="let option of options; let i=index">
+      <ion-item-options side="start">
+        <ion-item-option (click)="submitSleepiness(i+1)" color="success">Submit</ion-item-option>
+      </ion-item-options>
+      <ion-item>
+        <ion-card color="medium">
+          <ion-card-content>{{i+1}}: {{option}} </ion-card-content>
+        </ion-card>
+      </ion-item>
+
+
+
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

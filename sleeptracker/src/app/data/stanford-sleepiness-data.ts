@@ -4,8 +4,7 @@
 import { SleepData } from './sleep-data';
 
 export class StanfordSleepinessData extends SleepData {
-	public static ScaleValues = [undefined,//Sleepiness scale starts at 1
-	'Feeling active, vital, alert, or wide awake', //1
+	public static ScaleValues = ['Feeling active, vital, alert, or wide awake', //1
 	'Functioning at high levels, but not at peak; able to concentrate', //2
 	'Awake, but relaxed; responsive but not fully alert', //3
 	'Somewhat foggy, let down', //4
@@ -19,6 +18,7 @@ export class StanfordSleepinessData extends SleepData {
 		super();
 		this.loggedValue = loggedValue;
 		this.loggedAt = loggedAt;
+		this.type = "Stanford Sleepiness Scale Data";
 	}
 
 	override summaryString():string {

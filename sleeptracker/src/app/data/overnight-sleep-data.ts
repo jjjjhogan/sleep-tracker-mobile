@@ -8,6 +8,7 @@ export class OvernightSleepData extends SleepData {
 		super();
 		this.sleepStart = sleepStart;
 		this.sleepEnd = sleepEnd;
+		this.type = "Logged Sleep Data"
 	}
 
 	override summaryString():string {

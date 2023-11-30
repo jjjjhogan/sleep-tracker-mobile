@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StanfordSleepinessData } from 'src/app/data/stanford-sleepiness-data';
+import { SleepService } from 'src/app/services/sleep.service';
 
 @Component({
   selector: 'app-daytime-logger',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./daytime-logger.page.scss'],
 })
 export class DaytimeLoggerPage implements OnInit {
+  options:any[];
 
-  constructor() { }
+  constructor(private sleepService:SleepService) {
+    this.options = StanfordSleepinessData.ScaleValues;
+    console.log(this.options);
+   }
 
   ngOnInit() {
   }
 
+  submitSleepiness(index:number){
+    this.sleepService.logSleepinessData(new StanfordSleepinessData(index));
+  }
 }
